@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Status Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Digital Vault</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+                    <li><a href="resume.html"><span class="icon">📄</span> Resume</a></li>
+                    <li><a href="id-cards.html"><span class="icon">🪪</span> ID Cards</a></li>
+                    <li><a href="passports.html"><span class="icon">🛂</span> Passports</a></li>
+                    <li><a href="#"><span class="icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="info">
+                    <span class="name">User</span>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Vault Dashboard</h1>
+                <div class="action-bar" style="display: flex; align-items: center; gap: 20px;">
+                    <button id="addItemBtn" class="btn-primary" style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.2rem;">+</span> Add Item
+                    </button>
+                    <div class="date-display" id="dateDisplay"></div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Status Cards -->
+
+                <div class="card status-card">
+                    <h3>Active Credentials</h3>
+                    <div class="big-number">3</div>
+                </div>
+                <div class="card status-card">
+                    <h3>Resume</h3>
+                    <div class="status-text" style="color: #00b894;">Up to date</div>
+                </div>
+                <div class="card status-card">
+                    <h3>ID Cards</h3>
+                    <div class="big-number">2</div>
+                </div>
+                <div class="card status-card">
+                    <h3>Passport</h3>
+                    <div class="status-text" style="color: #00b894;">Verified</div>
+                </div>
+
+                <!-- Charts -->
+                <div class="card wide-card">
+                    <h3>Vault Storage Growth</h3>
+                    <canvas id="resourceChart"></canvas>
+                </div>
+
+                <div class="card tall-card">
+                    <h3>Document Distribution</h3>
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+
+                <div class="card wide-card activity-log">
+                    <h3>Recent Access</h3>
+                    <ul id="activityList">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div id="addItemModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Item</h2>
+            <div class="modal-options">
+                <div class="option-card">
+                    <div class="icon">🔐</div>
+                    <h3>Credential</h3>
+                    <p>Add new access credential</p>
+                </div>
+                <div class="option-card">
+                    <div class="icon">🪪</div>
+                    <h3>ID Card</h3>
+                    <p>Drivers license, Work ID</p>
+                </div>
+                <div class="option-card">
+                    <div class="icon">📄</div>
+                    <h3>Document</h3>
+                    <p>Passport, Resume, Contracts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
