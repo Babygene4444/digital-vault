@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Digital Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Digital Vault</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+                    <li class="active"><a href="resume.html"><span class="icon">📄</span> Resume</a></li>
+                    <li><a href="id-cards.html"><span class="icon">🪪</span> ID Cards</a></li>
+                    <li><a href="passports.html"><span class="icon">🛂</span> Passports</a></li>
+                    <li><a href="#"><span class="icon">⚙️</span> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="info">
+                    <span class="name">User</span>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>My Resume</h1>
+                <div class="date-display" id="dateDisplay"></div>
+            </header>
+
+            <div class="card wide-card" style="height: 80vh; overflow: hidden; display: flex; flex-direction: column;">
+                <div
+                    style="padding-bottom: 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Resume Preview</h3>
+                    <div>
+                        <button class="btn-primary">Download PDF</button>
+                        <button class="btn-secondary">Edit</button>
+                    </div>
+                </div>
+                <!-- Mock Resume Content -->
+                <div
+                    style="flex: 1; overflow-y: auto; padding-right: 10px; font-family: 'Times New Roman', serif; color: #ccc; line-height: 1.6;">
+                    <h1 style="color: #fff; border-bottom: 1px solid #555;">Jane Doe</h1>
+                    <p>Software Engineer | AI Specialist</p>
+
+                    <h3 style="color: #fff; margin-top: 20px;">Experience</h3>
+                    <p><strong>Senior Developer at Tech Corp</strong> (2020 - Present)</p>
+                    <ul>
+                        <li>Led development of internal AI agents.</li>
+                        <li>Optimized cloud infrastructure reducing costs by 20%.</li>
+                    </ul>
+
+                    <p><strong>Developer at Startup Inc</strong> (2018 - 2020)</p>
+                    <ul>
+                        <li>Built full-stack web applications using React and Node.js.</li>
+                    </ul>
+
+                    <h3 style="color: #fff; margin-top: 20px;">Education</h3>
+                    <p><strong>B.S. Computer Science</strong>, University of Technology (2018)</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Simple date script reuse
+        const dateDisplay = document.getElementById('dateDisplay');
+        if (dateDisplay) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateDisplay.textContent = new Date().toLocaleDateString('en-US', options);
+        }
+    </script>
+</body>
+
+</html>
